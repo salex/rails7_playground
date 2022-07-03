@@ -1,0 +1,6 @@
+div.w-full
+  h1.font-bold.text-2xl New <%= human_name.capitalize %>
+  div = link_to icon('fas fa-list',"Cancel - List <%= human_name.pluralize.capitalize %>"), <%= index_helper(type: :path) %>, class:"#{btn_sm_green}"
+  hr.border-1.border-blue-500.my-1
+  == render "form", <%= singular_table_name %>: @<%= singular_table_name %>
+

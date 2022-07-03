@@ -1,0 +1,10 @@
+div.w-full
+  h1.font-bold.text-2xl Editing <%= human_name.capitalize %>
+  div.flex.gap-8
+    = link_to icon('fas fa-eye',"Show <%= human_name.capitalize %>"), <%= edit_helper(type: :path) %>, class:"#{btn_sm_green}"
+    = link_to icon('fas fa-list',"List <%= human_name.pluralize.capitalize %>"), 
+      <%= index_helper(type: :path) %>, class:"#{btn_sm_green}"
+    = button_to icon('fas fa-trash',"Destroy <%= human_name.capitalize %>"), <%= model_resource_name(prefix: "@") %>, method: :delete, form:{data: { turbo_confirm: 'Are you sure?', turbo_method:'delete' }}, class:"#{btn_sm} bg-red-700 text-white"
+
+  hr.border-1.border-blue-500.my-1
+  == render "form", <%= singular_table_name %>: @<%= singular_table_name %>

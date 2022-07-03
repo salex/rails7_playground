@@ -1,0 +1,27 @@
+<div data-controller="test">
+  <h1 class="font-bold text-4xl">Test#index</h1>
+  <p>Find me in app/views/test/index.html.erb</p>
+  <%- arr = %w{one two three four five} %>
+  <%- arr.each do |t| %>
+    <%= check_box_tag t,'0',false ,data:{test_target:"checkbox",
+      action:"test#doSomething"}%>
+    <label><%= t %></label>
+  <%- end %>
+  <div class="hidden" data-test-target="display">
+    <span>Display one</span>
+  </div>
+  <div class="hidden" data-test-target="display">
+    <span>Display two</span>
+  </div>
+  <div class="hidden" data-test-target="display">
+    <span>Display three</span>
+  </div>
+  <div class="hidden" data-test-target="display">
+    <span>Display four</span>
+  </div>
+  <div class="hidden" data-test-target="display">
+    <span>Display five</span>
+  </div>
+
+</div>
+

@@ -1,0 +1,6 @@
+div.w-full
+  h1.font-bold.text-2xl New Thing
+  div = link_to icon('fas fa-list',"Cancel - List Things"), things_path, class:"#{btn_sm_green}"
+  hr.border-1.border-blue-500.my-1
+  == render "form", thing: @thing
+

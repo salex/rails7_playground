@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Articles</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <script crossorigin="anonymous" src="https://kit.fontawesome.com/69f9b59efd.js"></script>
+  </head>
+
+  <body>
+    <main class="container mx-auto mt-16 px-5 flex">
+      <%= yield %>
+    </main>
+  </body>
+</html>

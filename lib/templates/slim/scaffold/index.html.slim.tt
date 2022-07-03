@@ -1,0 +1,15 @@
+div.w-full
+  p style="color: green" = notice
+
+  h1.font-bold.text-2xl <%= human_name.pluralize %>
+  = link_to link_to icon('fas fa-plus-square', "New <%= human_name.capitalize %>"), <%= new_helper(type: :path) %>,class:"#{btn_sm_blue}"
+  hr.border-1.border-blue-500.my-1
+
+  #<%= plural_table_name %>
+    - @<%= plural_table_name %>.each do |<%= singular_table_name %>|
+      == render <%= singular_table_name %>
+      = link_to icon('fas fa-eye',"Show <%= human_name.capitalize %>"), <%= model_resource_name(singular_table_name) %>,class:"#{btn_sm_green}"
+      = link_to icon('fas fa-edit',"Edit <%= human_name.capitalize %>"),  edit_<%= singular_table_name %>_path(<%= singular_table_name %>),class:"#{btn_sm_green}"
+
+      hr.border-1.border-blue-500.my-1
+

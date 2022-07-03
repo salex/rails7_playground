@@ -1,0 +1,15 @@
+div.w-full
+  p style="color: green" = notice
+
+  h1.font-bold.text-2xl Things
+  = link_to link_to icon('fas fa-plus-square', "New Thing"), new_thing_path,class:"#{btn_sm_blue}"
+  hr.border-1.border-blue-500.my-1
+
+  #things
+    - @things.each do |thing|
+      == render thing
+      = link_to icon('fas fa-eye',"Show Thing"), thing,class:"#{btn_sm_green}"
+      = link_to icon('fas fa-edit',"Edit Thing"),  edit_thing_path(thing),class:"#{btn_sm_green}"
+
+      hr.border-1.border-blue-500.my-1
+

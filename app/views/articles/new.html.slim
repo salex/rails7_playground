@@ -1,0 +1,7 @@
+div.w-full
+  h1.font-bold.text-2xl New Article
+  div =< link_to icon('fas fa-list'," Cancel - back to articles"), articles_path, class: "#{btn_sm_blue}"
+  hr.border-1.border-blue-500.my-1
+  = render "form", article: @article
+
+

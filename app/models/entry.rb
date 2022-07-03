@@ -1,0 +1,2 @@
+class Entry < Article
+end

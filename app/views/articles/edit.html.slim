@@ -1,0 +1,16 @@
+div.w-full
+  h1.font-bold.text-2xl Editing article
+  div.flex.gap-8
+    div => link_to icon('fas fa-eye'," Cancel - Show article"), @article,
+    class: "#{btn_sm_blue}"
+    div =< link_to icon('fas fa-list'," Cancel - List articles"), articles_path,
+    class: "#{btn_sm_blue}"
+    div = button_to icon('fas fa-trash'," Destroy article"), @article, method: :delete,
+    class:"#{btn_sm_red} ", form:{data: { turbo_confirm: 'Are you sure?', turbo_method:'delete' }}
+
+  
+  hr.border-1.border-blue-500.my-1
+  == render "form", article: @article
+
+
+

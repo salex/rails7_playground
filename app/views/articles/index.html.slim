@@ -1,0 +1,19 @@
+.w-full
+  p style="color: green" = notice
+
+  h1.font-bold.text-2xl Articles
+  = link_to link_to icon('fas fa-plus-square'," New article"), new_article_path,class:"#{btn_sm_blue}"
+
+  hr.border-1.border-blue-500.my-1
+
+  #articles
+    - @articles.each do |article|
+
+      == render article
+      
+      = link_to icon('fas fa-eye'," Show article"), article,class:"#{btn_sm_green} "
+      = link_to icon('fas fa-edit'," Edit article"), edit_article_path(article),class: "#{btn_sm_blue}"
+      hr.border-1.border-blue-500.my-1
+
+
+
